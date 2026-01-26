@@ -1,25 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import CardArticle from './components/CardArticle';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+        <h2>Products</h2>
+        <div className="List">
+          <CardArticle title="Apple Watch" nom="codoou"/>
+          <CardArticle title="Iphone"/>
+          <CardArticle title="Airpods"/>
+        </div>
+          
     </div>
-  );
+  )
 }
-
-export default App;

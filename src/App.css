@@ -1,38 +1,63 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 64px 16px 16px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .ListDivider {
+    border-color: slategray;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .ListTitle {
+    margin: 8px 0;
   }
-}
+
+  .List {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .aaa{
+    color: red;
+  }
+  .Container {
+    position: relative;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .Favorite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: 0;
+    background: none;
+    font-size: 20px;
+  
+    &:hover {
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+    }
+  }
+  
+  .Specification {
+    list-style: none;
+    padding: 0;
+    color:red;
+  }
+  
+  .NotAvailableStatus {
+    font-size: 14px;
+    color: lightsalmon;
+  }
+  
+  .AvailableStatus {
+    font-size: 14px;
+    color: lightgreen;
+  }
+  
