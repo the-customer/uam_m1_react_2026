@@ -1,7 +1,7 @@
-export default function Image() {
+export default function Image({img}) {
     return (
         <img
-            src='./images/iphone.png'
+            src={img}
             alt='...'
             width='128'
             height='128'
