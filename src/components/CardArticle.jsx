@@ -1,32 +1,33 @@
 import { useState } from "react";
 import Image from "./Image";
 
-export default function CardArticle({product}) {
+export default function CardArticle({product,onPurchase,onFavorite,favorite}) {
     const [showSpec,setShowSpec] = useState(false);
 
-    function clicked(){
-        setShowSpec(!showSpec);
-    }
     return (
         <article className='Container' style={{ backgroundColor: 'slategray' }}>
             <button
+                onClick={()=>{onFavorite(product.id)}}
                 className='Favorite'>
-                🤍
+                { favorite === false ? '🤍' : '❤️'}
             </button>
             <h2>{product.title}</h2>
             <Image img={product.img}/>
             <p>
                 Specification:{ showSpec && product.specifications }
-                <button onClick={clicked}>
+                <button onClick={()=>{setShowSpec(!showSpec)}}>
                     show
                 </button>
             </p>
             <p>${ product.price }</p>
-            { product.stock == 0 && <p className='NotAvailableStatus'>Not available</p> }
-            { product.stock >=1 && <p>{ product.stock } pcs</p> }
+            { product.stock == 0 
+            ? 
+            <p className='NotAvailableStatus'>Not available</p> 
+            :
+            <p>{ product.stock } pcs</p> }
             
-            <button>Buy</button>
-            <button>Buy 2</button>
+            {product.stock > 0 &&<button onClick={()=>{onPurchase(product.id)}}>Buy</button>}
+            { product.stock > 1 && <button onClick={()=>{onPurchase(product.id,2)}}>Buy 2</button> }
         </article>
     )
 }
